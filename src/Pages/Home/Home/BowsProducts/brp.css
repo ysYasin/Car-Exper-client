@@ -1,0 +1,8 @@
+.shopping-bag {
+    display: none;
+    transition: all 0.3s ease-in;
+}
+
+.shopping-card:hover .shopping-bag {
+    display: block;
+}
