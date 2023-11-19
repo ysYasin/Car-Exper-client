@@ -58,7 +58,6 @@ const BookedItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           const remaining = bookeds.filter((booked) => booked._id !== id);
           let updated = bookeds.find((booked) => booked._id === id);

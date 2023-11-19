@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import NavBar from "../Shared/NavBar/NavBar";
 import Hero from "../Shared/HeroOfAll/Hero";
 import Swal from "sweetalert2";
+import Footer from "../Shared/Footer/Footer";
 
 const Booking = () => {
   const { user } = useContext(AuthContext);
@@ -54,7 +55,7 @@ const Booking = () => {
 
       <form
         onSubmit={handleSubmitAppoinment}
-        className="card-body w-full py-20 rounded-lg bg-base-200 px-44"
+        className="card-body mb-16 w-full py-20 rounded-lg bg-base-200 px-44"
       >
         <div className="flex items-center gap-7 justify-center">
           <div className="w-1/2">
@@ -95,6 +96,7 @@ const Booking = () => {
                 type="text"
                 name="perpas"
                 placeholder="Perpas"
+                defaultValue={service.title}
                 className="input input-bordered"
                 required
               />
@@ -127,6 +129,7 @@ const Booking = () => {
           </button>
         </div>
       </form>
+      <Footer></Footer>
     </div>
   );
 };
