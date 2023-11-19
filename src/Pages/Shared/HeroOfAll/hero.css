@@ -1,0 +1,32 @@
+.triangle {
+    padding: 20px;
+    background: #ff3811;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.triangle::before {
+    content: "";
+    position: absolute;
+    width: 101px;
+    height: 76px;
+    background-image: linear-gradient(328deg, #ff3811, #ff3811, #ff3811, transparent, transparent);
+    left: -45px;
+    top: 25px;
+    z-index: -1;
+    transform: rotate(122deg);
+}
+
+.triangle::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 213px;
+    background-image: linear-gradient(328deg, #ff3811fc, #ff3811, transparent, transparent);
+    right: -3px;
+    top: 0;
+    z-index: -1;
+    transform: rotate(230deg);
+}

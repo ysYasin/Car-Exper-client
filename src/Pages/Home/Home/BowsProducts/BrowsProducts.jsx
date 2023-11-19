@@ -49,13 +49,10 @@ const BrowsProducts = () => {
           believable.{" "}
         </p>
       </div>
-      <div className="grid gap-y-6 w-[80%] mx-auto mt-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-y-6 w-[90%] mx-auto mt-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => {
           return (
-            <div
-              key="{product.img}"
-              className="card w-96 bg-base-100 shadow-xl"
-            >
+            <div key={product.img} className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 relative shopping-card pt-10">
                 <img
                   src={product.img}

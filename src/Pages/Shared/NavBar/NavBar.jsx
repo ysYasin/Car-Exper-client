@@ -1,7 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut();
+  };
+
   const navLinks = (
     <>
       <li>
@@ -15,20 +22,36 @@ const NavBar = () => {
         </Link>
       </li>
       <li>
-        <Link to={"/services"} className="text-xl font-semibold">
+        <a href="#services" className="text-xl font-semibold">
           Services
-        </Link>
+        </a>
       </li>
       <li>
         <Link to={"/blog"} className="text-xl font-semibold">
           Blog
         </Link>
       </li>
-      <li>
-        <Link to={"/contact"} className="text-xl font-semibold">
-          Contact
-        </Link>
-      </li>
+
+      {user ? (
+        <>
+          <li>
+            <button className="text-xl font-semibold" onClick={handleLogout}>
+              Logout
+            </button>
+          </li>{" "}
+          <li>
+            <Link to={`/bookedItem`} className="text-xl font-semibold">
+              My Booking's
+            </Link>
+          </li>
+        </>
+      ) : (
+        <li>
+          <Link className="text-xl font-semibold" to="/login">
+            Login
+          </Link>
+        </li>
+      )}
     </>
   );
   return (
@@ -67,7 +90,11 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to="">
+          <button className="btn btn-outline hover:bg-[#ff3811] text-[#FF3811] outline-[#ff3811]">
+            Appoinment
+          </button>
+        </Link>
       </div>
     </div>
   );

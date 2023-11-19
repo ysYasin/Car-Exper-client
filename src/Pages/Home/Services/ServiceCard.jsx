@@ -12,8 +12,11 @@ const ServiceCard = ({ service }) => {
         <h2 className="card-title font-semibold">{title}</h2>
         <div className="card-actions flex justify-between">
           <p className="text-[#ff3811]">Price : ${price}</p>
-          <Link to={`services/${_id}`}>
-            <button className="text-red-600">
+          <Link to={`booking/${_id}`}>
+            <button
+              className="text-red-600 tooltip tooltip-top"
+              data-tip="Book This service"
+            >
               {" "}
               <FaArrowRight width={"2rem"} />
             </button>
